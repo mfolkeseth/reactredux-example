@@ -1,0 +1,6 @@
+export const INCREASE_COUNTER = 'INCREASE_COUNTER';
+export const DECREASE_COUNTER = 'DECREASE_COUNTER';
+
+export const TOGGLE_TODO = 'TOGGLE_TODO';
+export const UPDATE_VALUE = 'UPDATE_VALUE';
+export const ADD_TODO = 'ADD_TODO';

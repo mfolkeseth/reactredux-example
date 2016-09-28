@@ -12,15 +12,15 @@ import { Counter, Todo } from './reducers';
 import { Provider } from 'react-redux';
 
 // application root
-import App from './components/App'
+import App from './components/App';
 
-var reducer = combineReducers({
+const reducer = combineReducers({
   counter: Counter,
   todo: Todo
 });
 
 // for dev tools: https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en
-var store = createStore(reducer, window.devToolsExtension ? window.devToolsExtension() : f => f);
+const store = createStore(reducer, window.devToolsExtension ? window.devToolsExtension() : (f) => f);
 
 render(
   <Provider store={store}>
@@ -30,4 +30,4 @@ render(
   </Provider>
   ,
   document.getElementById('app')
-)
+);

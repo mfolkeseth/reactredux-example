@@ -2,15 +2,15 @@ import {
   TOGGLE_TODO,
   UPDATE_VALUE,
   ADD_TODO
-} from '../constants.js'
+} from '../constants.js';
 
 export function toggleTodo(index) {
   return {
     type: TOGGLE_TODO,
     payload: {
-      index: index
+      index
     }
-  }
+  };
 }
 
 export function updateValue(value) {
@@ -19,15 +19,15 @@ export function updateValue(value) {
     payload: {
       task: value
     }
-  }
+  };
 }
 
 export function addTodo(task) {
   return {
     type: ADD_TODO,
     payload: {
-      task: task,
+      task,
       done: false
     }
-  }
+  };
 }

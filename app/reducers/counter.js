@@ -1,11 +1,11 @@
 import {
   INCREASE_COUNTER,
   DECREASE_COUNTER
-} from '../constants.js'
+} from '../constants.js';
 
 const initialState = {
   number: 0
-}
+};
 
 export default function counter(state = initialState, action) {
   switch (action.type) {
@@ -18,7 +18,7 @@ export default function counter(state = initialState, action) {
       return {
         ...state,
         number: state.number - action.payload.decrease
-      }
+      };
     default:
       return state;
   }

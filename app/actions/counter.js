@@ -9,7 +9,7 @@ export function increaseCounter() {
     payload: {
       increase: 1
     }
-  }
+  };
 }
 
 export function decreaseCounter() {
@@ -18,5 +18,5 @@ export function decreaseCounter() {
     payload: {
       decrease: 1
     }
-  }
+  };
 }

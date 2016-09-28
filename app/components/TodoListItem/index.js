@@ -1,6 +1,16 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 const TodoListItem = React.createClass({
+
+  propTypes: {
+    index: PropTypes.number.isRequired,
+    toggle: PropTypes.func.isRequired,
+    todo: PropTypes.shape({
+      task: PropTypes.string.isRequired,
+      done: PropTypes.bool
+    }),
+
+  },
 
   handleToggle() {
     const { index, toggle } = this.props;
@@ -9,14 +19,14 @@ const TodoListItem = React.createClass({
 
   render() {
 
-    const { todo, index, toggle } = this.props;
+    const { todo } = this.props;
 
     return(
       <label>
-          <input type="checkbox" checked={todo.done} onChange={this.handleToggle} />
-          {todo.task}
+        <input type="checkbox" checked={todo.done} onChange={this.handleToggle} />
+        {todo.task}
       </label>
-    )
+    );
   }
 });
 

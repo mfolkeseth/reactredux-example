@@ -2,7 +2,7 @@ import {
   TOGGLE_TODO,
   UPDATE_VALUE,
   ADD_TODO
-} from '../constants.js'
+} from '../constants.js';
 
 const initialState = {
   todos: [
@@ -22,7 +22,7 @@ const initialState = {
   newTodo: {
     task: ''
   }
-}
+};
 
 export default function todo(state = initialState, action) {
   switch(action.type) {
@@ -33,14 +33,14 @@ export default function todo(state = initialState, action) {
           return {
             task: todo.task,
             done: index === action.payload.index ? !todo.done : todo.done
-          }
+          };
         })
-      }
+      };
     case UPDATE_VALUE:
       return {
         ...state,
         newTodo: { task: action.payload.task }
-      }
+      };
     case ADD_TODO:
       return {
         ...state,
@@ -49,7 +49,7 @@ export default function todo(state = initialState, action) {
           action.payload
         ],
         newTodo: { task: '' }
-      }
+      };
     default:
       return state;
   }

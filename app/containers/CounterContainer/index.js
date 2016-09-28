@@ -1,17 +1,20 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 
-import { increaseCounter, decreaseCounter } from '../../actions'
+import { increaseCounter, decreaseCounter } from '../../actions';
 
-import Counter from '../../components/Counter'
+import Counter from '../../components/Counter';
 
 const CounterContainer = React.createClass({
+
+  propTypes: {
+    number: PropTypes.number.isRequired,
+    increaseCounter: PropTypes.func.isRequired,
+    decreaseCounter: PropTypes.func.isRequired
+  },
+
   render() {
-    const {
-      number,
-      increaseCounter,
-      decreaseCounter
-    } = this.props;
+    const { number, increaseCounter, decreaseCounter } = this.props;
 
     return(
       <Counter
@@ -28,12 +31,12 @@ function mapStateToProps(state) {
   return {
     number: state.counter.number,
     canDecrease: state.counter.canDecrease
-  }
+  };
 }
 
 export default connect(mapStateToProps,
   {
-      increaseCounter,
-      decreaseCounter
+    increaseCounter,
+    decreaseCounter
   }
 )(CounterContainer);

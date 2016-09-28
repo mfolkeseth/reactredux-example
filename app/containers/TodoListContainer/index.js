@@ -6,7 +6,7 @@ import { toggleTodo, updateValue, addTodo } from '../../actions';
 import AddTodo from '../../components/AddTodo';
 import TodoListItem from '../../components/TodoListItem';
 
-class TodoListContainer extends React.Component {
+const TodoListContainer = React.createClass({
 
   render() {
 
@@ -26,7 +26,7 @@ class TodoListContainer extends React.Component {
       </div>
     )
   }
-}
+});
 
 function mapStateToProps(state) {
   return {

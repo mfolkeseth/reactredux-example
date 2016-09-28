@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class Counter extends React.Component {
+const Counter = React.createClass({
   render() {
     var buttonStyle = {
       padding: '5px 10px'
@@ -21,4 +21,6 @@ export default class Counter extends React.Component {
       </div>
     );
   }
-}
+});
+
+export default Counter;

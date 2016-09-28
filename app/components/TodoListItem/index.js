@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class TodoListItem extends React.Component {
+const TodoListItem = React.createClass({
   render() {
 
     const { todo, index, toggle } = this.props;
@@ -12,4 +12,6 @@ export default class TodoListItem extends React.Component {
       </label>
     )
   }
-}
+});
+
+export default TodoListItem;

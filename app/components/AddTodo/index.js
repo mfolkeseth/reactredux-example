@@ -1,15 +1,28 @@
 import React from 'react';
 
-export default class AddTodo extends React.Component {
+const AddTodo = React.createClass ({
+  handleSubmit(event){
+    const { todo, submit } = this.props;
+    event.preventDefault();
+    submit(todo.task);
+  },
+
+  handleUpdate(event){
+    const { update } = this.props;
+    update(event.target.value)
+  },
+
   render() {
 
     const { todo, submit, update } = this.props;
 
     return (
-      <form onSubmit={(e) => { e.preventDefault();  return submit(todo.task); } }>
-        <input type="text" value={todo.task} onChange={(e) => update(e.target.value)}/>
+      <form onSubmit={ this.handleSubmit }>
+        <input type="text" value={todo.task} onChange={ this.handleUpdate }/>
         <button type="submit">Add todo</button>
       </form>
     )
   }
-}
+});
+
+export default AddTodo;

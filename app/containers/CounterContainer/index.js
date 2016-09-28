@@ -5,7 +5,7 @@ import { increaseCounter, decreaseCounter } from '../../actions'
 
 import Counter from '../../components/Counter'
 
-class CounterContainer extends React.Component {
+const CounterContainer = React.createClass({
   render() {
     const {
       number,
@@ -22,7 +22,7 @@ class CounterContainer extends React.Component {
       />
     );
   }
-}
+});
 
 function mapStateToProps(state) {
   return {

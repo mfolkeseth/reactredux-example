@@ -10,16 +10,16 @@ const TodoListContainer = React.createClass({
 
   render() {
 
-    const { todos, newTodo } = this.props;
+    const { todos, newTodo, addTodo, updateValue, toggleTodo } = this.props;
 
     return(
       <div>
         <h3>Todo list:</h3>
-        <AddTodo todo={newTodo} submit={this.props.addTodo} update={this.props.updateValue}/>
+        <AddTodo todo={newTodo} submit={addTodo} update={updateValue}/>
         <ul>
           {todos.map((todo, index) =>
             <li key={index}>
-              <TodoListItem toggle={this.props.toggleTodo} todo={todo} index={index}/>
+              <TodoListItem toggle={toggleTodo} todo={todo} index={index}/>
             </li>
           )}
         </ul>
